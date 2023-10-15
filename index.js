@@ -27,15 +27,16 @@ class Triangle extends GeometricFigures {
             const s = (baseOrBaseA + heightOrBaseB + baseC) / 2;
             return Math.sqrt(s * (s - baseOrBaseA) * (s - heightOrBaseB) * (s - baseC));
         }
-        else
+        else {
             return (baseOrBaseA * heightOrBaseB) / 2;
+        }
     };
 }
 class Rectangle extends SquareRectanglePrint {
-    printArea = 'S = a * b';
+    printArea = "S = a * b" /* EPrintAreaValues.Rectangle */;
     calculateArea = (sideA, sideB) => sideA * sideB;
 }
 class Square extends SquareRectanglePrint {
-    printArea = 'S = a**2';
+    printArea = "S = a**2" /* EPrintAreaValues.Square */;
     calculateArea = (side) => side ** 2;
 }
