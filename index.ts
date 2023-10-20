@@ -35,7 +35,7 @@ interface ISquareRectanglePrint {
 }
 
 //абстрактный класс всех фигур
-abstract class GeometricFigures <Type> implements IGeometricFigures<Type> {
+abstract class GeometricFigures<Type extends (Circle | Triangle)> implements IGeometricFigures<Type> {
     constructor (
         public readonly color : string ,
         public readonly name : string
@@ -45,7 +45,7 @@ abstract class GeometricFigures <Type> implements IGeometricFigures<Type> {
 }
 
 //абстрактный класс для Rectangle и Square с реализацией print() (используя ISquareRectanglePrint)
-abstract class SquareRectanglePrint<Type> extends GeometricFigures<Type> implements ISquareRectanglePrint{
+abstract class SquareRectanglePrint<Type extends (Square | Rectangle)> extends GeometricFigures<Type> implements ISquareRectanglePrint {
     protected abstract printArea : printAreaType<Type>
     
     print () : string {
